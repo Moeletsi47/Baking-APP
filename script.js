@@ -1,25 +1,21 @@
-const addButton = document.querySelectorAll("button");
+
 const body = document.body
-const numOfItems = document.getElementById("numOfItems");
 const service = document.querySelectorAll("#nav");
 const display = document.querySelector("sub-box-child1");
-let num = 0;
 const btn2 = document.querySelector("#next");
 const image = document.createElement("img");
 const child1 = document.querySelector(".grand-child1");
 const child2 = document.querySelector(".grand-child2");
 const child3 = document.querySelector(".grand-child3");
-const home = document.querySelector("#home_body")
+const home = document.querySelector("#home_body");
+const wish = document.querySelectorAll(".fa-regular");
+const products = document.querySelectorAll(".products");
+const wishList = document.querySelector(".wishList");
+const subContainer = document.querySelector(".subContainer");
+const cross = document.querySelector(".fa-xmark");
+var state = false;
 
 
-
-for(let i = 0; i < addButton.length; i++){
-
-    addButton[i].onclick = () =>{
-    numOfItems.innerText = `${++num}`;
-    numOfItems.style.opacity="1";
-  }
-}
 const square = document.createElement("div")
 square.classList.add("kurl")
 
@@ -36,7 +32,6 @@ square.classList.add("kurl")
     }
 
     function setup () {
-      console.log(data)
       const oop = document.createElement("div");
       oop.innerText= data.setup;
       oop.classList.add("setup", "jokes");
@@ -64,6 +59,9 @@ square.classList.add("kurl")
 
   getRatings();
 
+  
+
+
 //end of Home Endpoint
 
 
@@ -85,28 +83,3 @@ square.classList.add("kurl")
 
 
 
-/*
-const newuser = {
-  name : "jason",
-  job  : "programmer"
-};
-
- const clickHandler = async () => {
- 
-  const res = await  fetch("https://dog.ceo/api/breeds/image/random");
-  const data = await res.json();
-
-        if(!res.ok){
-          console.log("problem");
-          return;
-        }
-       
-        console.log(data.message);
-        
-        image.setAttribute("src", data.message)
-        image.classList.add("email")
-        body.append(image)
-
-    }
-     btn2.onclick = () => clickHandler();
-*/

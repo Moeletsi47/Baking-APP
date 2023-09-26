@@ -5,13 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pastry Paradise</title>
   <link rel="stylesheet" href="../stylesheets/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body id="body">
   <div class="Shop_box">
+   <div class="wishList">
+      <i class="fa-solid fa-xmark fa-xl"></i>
+   </div>
+  
     <!--navbar-->
     <nav class="shop_nav">
       <a href="../index.html"><img src="../img/back.png"></a>
-     <!-- <p><i>Best Taste Ever</i></p> -->
      <div class="nav_right">
       <img src="../img/trolly.png" class="trolly">
       <div id="numOfItems"></div>
@@ -24,6 +28,7 @@
     <div class="products_box"> 
     <!--product_1-->
     <div class="products">
+     
        <div class="product_img">        
         <img src="../img/cake1.jpeg">
        </div>
@@ -32,6 +37,7 @@
           <div class="price">
              <p>R600</p>
              <button id="btn1">Add</button>
+             <i class="fa-regular fa-heart fa-xl"></i>
           </div>
        </div>
     </div>
@@ -45,6 +51,7 @@
         <div class="price">
            <p>R150</p>
            <button id="btn1">Add</button>
+           <i class="fa-regular fa-heart fa-xl"></i>
         </div>
      </div>
     </div>
@@ -58,6 +65,7 @@
         <div class="price">
            <p>R180</p>
            <button>Add</button>
+           <i class="fa-regular fa-heart fa-xl"></i>
         </div>
      </div>
     </div>
@@ -71,6 +79,7 @@
         <div class="price">
            <p>R100</p>
            <button>Add</button>
+           <i class="fa-regular fa-heart fa-xl"></i>
         </div>
      </div>
     </div>
@@ -84,6 +93,7 @@
         <div class="price">
            <p>R80</p>
            <button>Add</button>
+           <i class="fa-regular fa-heart fa-xl"></i>
         </div>
      </div>
     </div>
@@ -97,6 +107,7 @@
         <div class="price">
            <p>R120</p>
            <button>Add</button>
+           <i class="fa-regular fa-heart fa-xl"></i>
         </div>
      </div>
     </div>
@@ -110,6 +121,7 @@
         <div class="price">
            <p>R170</p>
            <button>Add</button>
+           <i class="fa-regular fa-heart fa-xl"></i>
         </div>
      </div>
     </div>
@@ -123,6 +135,7 @@
         <div class="price">
            <p>R530</p>
            <button>Add</button>
+           <i class="fa-regular fa-heart fa-xl"></i>
         </div>
      </div>
     </div>
@@ -136,6 +149,7 @@
         <div class="price">
            <p>R120</p>
            <button>Add</button>
+           <i class="fa-regular fa-heart fa-xl"></i>
         </div>
      </div>
     </div>
@@ -149,6 +163,7 @@
         <div class="price">
            <p>R130</p>
            <button>Add</button>
+           <i class="fa-regular fa-heart fa-xl"></i>
         </div>
      </div>
     </div>
@@ -162,6 +177,7 @@
         <div class="price">
            <p>R340</p>
            <button>Add</button>
+           <i class="fa-regular fa-heart fa-xl"></i>
         </div>
      </div>
     </div>
@@ -175,6 +191,7 @@
         <div class="price">
            <p>R600</p>
            <button>Add</button>
+           <i class="fa-regular fa-heart fa-xl"></i>
         </div>
      </div>
     </div>
@@ -182,6 +199,80 @@
   </div><!--close products_box-->
 </div>
   </div> <!--close shop_box-->
-   <script src="../script.js"></script>
+
+
+   <script >
+
+const wish = document.querySelectorAll(".fa-regular");
+const products = document.querySelectorAll(".products");
+const productsBox = document.querySelectorAll(".products-box");
+const wishList = document.querySelector(".wishList");
+const cross = document.querySelector(".fa-xmark");
+var state = false;
+const subContainer = document.querySelector(".subContainer");
+const numOfItems = document.getElementById("numOfItems");
+let num = 0;
+const addButton = document.querySelectorAll("button");
+
+
+for(let i = 0; i < addButton.length; i++){
+
+      addButton[i].onclick = () =>{
+      numOfItems.innerText = `${++num}`;
+      numOfItems.style.opacity="1";
+    }
+}
+function setShop() {
+
+   for(let i = 0; i <wish.length;i++){
+      products[i].setAttribute("id", i);
+      const like = wish[i];
+      like.style.opacity = "0";
+   }
+
+   for(let i =0 ; i < products.length; i++){
+      const over = products[i];
+      const like = wish[i];
+
+      like.style.transition="0.5s";
+      over.addEventListener("mouseover",() => like.style.opacity = "1" )
+      over.addEventListener("mouseout",() => like.style.opacity = "0" )
+      like.addEventListener("click", () => {
+         state = !state;
+         if(state){
+            like.classList.remove("fa-regular");
+            like.classList.add("fa-solid");
+         }else{
+            like.classList.remove("fa-solid");
+            like.classList.add("fa-regular");
+         }  
+      })
+   }
+
+   for(let i =0 ; i < products.length; i++){
+      const over = products[i];
+      const productsPic = document.querySelectorAll(".product_img")
+      const productPic = productsPic[i];
+      
+      productPic.addEventListener("click", () =>{
+         wishList.innerHTML = products[over.id].children[0].innerHTML;
+         const crossDiv = document.createElement("div");
+         crossDiv.innerHTML = `<i class="fa-solid fa-xmark fa-small"></i>`
+         crossDiv.style.color="red";
+      
+         wishList.append(crossDiv);
+         subContainer.style.opacity = "1";
+         wishList.style.display = "block";
+        
+         crossDiv.addEventListener("click", () =>{
+         wishList.style.display = "none";
+         })
+     })
+   }
+
+} //end of shop
+
+ setShop();
+   </script>
 </body>
 </html>
