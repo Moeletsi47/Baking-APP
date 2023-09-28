@@ -134,7 +134,7 @@
   height: 85vh;
   margin-top:70px;
   display: flex;
-  animation: grand-children 30s;
+  animation: grand-children 8s;
   animation-iteration-count: infinite;  
   animation-timing-function:steps(1); 
 }
@@ -145,7 +145,6 @@
   display: flex;
   align-items: center;  
   justify-content: space-around;
- 
 }
 .grand-child1{
   margin-left:0 ;
@@ -448,7 +447,7 @@
  .childImg{
     width:55%;
     margin-left: 20%;
-    margin-top: -15%;
+    margin-top: -20%;
  }
  .home_nav{
   height:15%;
