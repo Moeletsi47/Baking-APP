@@ -257,15 +257,16 @@ function setShop() {
       productPic.addEventListener("click", () =>{
          wishList.innerHTML = products[over.id].children[0].innerHTML;
          const crossDiv = document.createElement("div");
-         crossDiv.innerHTML = `<i class="fa-solid fa-xmark fa-small"></i>`
-         crossDiv.style.color="red";
+         crossDiv.innerHTML = `<i class="fa-solid fa-xmark fa-small"></i>`;
+         crossDiv.classList.add(".crossDiv");
       
          wishList.append(crossDiv);
-         subContainer.style.opacity = "1";
+         subContainer.style.opacity = "0.5";
          wishList.style.display = "block";
         
          crossDiv.addEventListener("click", () =>{
          wishList.style.display = "none";
+         subContainer.style.opacity = "1";
          })
      })
    }

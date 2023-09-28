@@ -7,7 +7,6 @@
 
 .setup{
   margin-top: -100px;
-
 }
 .punchline{
   margin-top: -80px;
@@ -19,38 +18,34 @@
   position: absolute;
 }
 #laughingIcon{
-  margin-top:88vh;
+  position:absolute;
+  bottom:12%;
   margin-left:30%;
 }
 .wish{
  margin-left: 2%;
 }
 .wishList{
-  position: absolute;
-  width: 500px;
-  height: 400px;
-  background-color:white;
-  margin-top:7%;
-  left: 35%;
+  position: fixed;
+  aspect-ratio: 1/1;
+  inset:0;
+  margin:auto;
+  width: 35%;
   z-index: 300;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 30px black;
-  gap:5px;
-  border-radius: 20px;
-  transition: 5s;
+  border-radius: 10px;
   display: none;
 }
 .wishList img{
+  aspect-ratio: 1/1;
   width: 100%;
-  height: 100%;
-  border-radius: 10px;
   object-fit: cover;
+  box-shadow: 0 0 10px black;
 }
 .crossDiv{
   width:40px;
   height:40px;
   margin-top:-100%;
+
 }
 
 .wishList .fa-solid{
@@ -58,7 +53,7 @@
   top:5px;
   right:5px;
   z-index: 1000;
-  color:black;
+
 }
 .oo{
   width:30px;
@@ -92,8 +87,7 @@
   list-style: none;
   gap:15px;
   width:250px;
-  margin-right: 20px;
-  
+  margin-right: 20px;  
 }
 .services ul li a{
   text-decoration: none;
@@ -126,7 +120,7 @@
   color: transparent;
   margin-left:20px;
   font-weight: bold;
-  color: rgb(1,0,41);
+  -webkit-text-stroke: 1px rgb(0, 35, 41);
   cursor: pointer;
 }
 .sub-box{
@@ -138,13 +132,11 @@
 .sub-box-child1{
   width: 100%;
   height: 85vh;
-  position: absolute;
   margin-top:70px;
   display: flex;
   animation: grand-children 30s;
   animation-iteration-count: infinite;  
   animation-timing-function:steps(1); 
- 
 }
 .grand-child1, .grand-child2, .grand-child3{
   width: 100%;
@@ -153,6 +145,7 @@
   display: flex;
   align-items: center;  
   justify-content: space-around;
+ 
 }
 .grand-child1{
   margin-left:0 ;
@@ -163,17 +156,23 @@
 .grand-child3{
   margin-left: 200%;
 }
-.grand-child1 img, .grand-child2 img, .grand-child3 img{
-  position: absolute;
-  object-fit: cover;
+.childImg{
   aspect-ratio: 1/1;
   width:30%;
+  border-radius: 50%;
+  right:10%;
+  position: relative;
+  background-color: red;
+}
+.childImg img{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   box-shadow:0 5px 15px black;
   border-radius: 50%;
-  right:20%;
 }
 .productDetail{
-  position: absolute;
   aspect-ratio: 1/1;
   width:35%;
   left: 12%;
@@ -181,6 +180,7 @@
   flex-direction: column;
   justify-content: center;
   gap:20px;
+ 
 }
 #order{
   width:150px;
@@ -332,57 +332,62 @@
 }
 .cakes{
   width: 100%;
-  height: 40%;
+  height:200px;
   display: flex;
+  align-items: flex-start;
   gap:10px;
-  position: relative;
-  align-items: center;
-
 }
 #item{
-   width: 30%;
-   height: 100%;
-   border-width: 1px;
-   border-style: solid;
-}
-#item img{
- object-fit: cover;
- width: 100%;
- height: 100%;
- opacity: 1;
-}
-.cakes p{
-  writing-mode:vertical-lr;
-  font-size: 30px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: normal;
-}
-/*About*/
-.About_box{
- background-color: #161616;
- width: 100%;
- height: 60vh;
- display: flex;
- padding-top: 80px;
- align-items: center;
- flex-direction: column;
-}
-.mission p{
-  color: white;
-  font-size: 30px;
-  flex:1;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin-top: -20px;
-}
-.company_info{
-  display: flex;
-  width: 90%;
-  flex:2;
-  align-items: center;
-  justify-content:center;
-  position: relative;
-  margin-top: -40px;
-}
+   min-height: 150px;
+   min-width: 150px;
+   border-style:solid;
+   border-width: 2px;
+   position: relative;
+   
+   }
+    #item img{
+    object-fit: cover;
+    width: 100%;
+    height:100%;
+    opacity: 1;
+    position: absolute;
+    }
+    .cakes p{
+    writing-mode:vertical-lr;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+    position: sticky;
+    left:0;
+    height: 100%;
+    background-color: white;
+    }
+    /*About*/
+    .About_box{
+    background-color: #161616;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    padding-top: 80px;
+    align-items: center;
+    flex-direction: column;
+    }
+    .mission p{
+      color: white;
+      font-size: 30px;
+      flex:1;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      margin-top: -20px;
+    }
+    .company_info{
+      display: flex;
+      width: 90%;
+      flex:2;
+      align-items: center;
+      justify-content:center;
+      position: relative;
+      margin-top: -40px;
+    }
 .company_info p{
   width:25%;
   color: white;
@@ -416,34 +421,64 @@
 /* for 600px screens and below*/
 @media only screen and (max-width:600px){
   /*Home*/
+  .grand-child1, .grand-child2, .grand-child3{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+    width: 100%;
+  }
+
+  .productDetail{
+    width:100%;
+    height: 70%;
+    gap:20px;
+    padding-left: 30px;
+  }
+  h2{
+    margin-top:0;
+  }
+  .h2{
+    width: 100%;
+    margin-left:0px
+  }
+ #popularName{
+  font-size:30px;
+ }
+ .childImg{
+    width:55%;
+    margin-left: 20%;
+    margin-top: -15%;
+ }
+ .home_nav{
+  height:15%;
+  box-shadow:0 1px 1px black;
+  
+ }
+ #icons{
+  display:none;
+ }
+ .services{
+  width: 100%;
+  position:absolute;
+  display: flex;
+  justify-content: center;
+  bottom:5px;
+ }
   .services ul{
     width:280px;
   }
- 
-  h2{
-    font-size:25px;
-    margin-top: 40%;;
-  }
+
   /*Shop*/
   .products{
     min-width: 120px;
   }
   /*Categories*/
-  #item{
-    min-width: 120px;
-    height: 120px;
-  }
   .cakes{
     overflow-x: scroll;
-  }
-  .cakes p{
-    font-size:12px;
-  }
-  .cakes :first-child{
-    margin-right: -6px;
     scroll-behavior: smooth;
   }
-  
+ 
  .company_info p, .delivery p{
   font-size: 10px;
   width: 100px;
@@ -460,15 +495,13 @@
  section p{
   font-size:10px;
  }
- 
+.jokes, #laughingIcon{
+  display: none;
+}
+.wishList{
+  width:70%;
 }
 
-@media only screen and (max-width:500px){
-  section {
-    flex-direction: column;
-    gap:20px;
-    overflow: hidden;
-  }
-
-
 }
+
+
