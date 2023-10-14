@@ -4,80 +4,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pastry Paradise</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="./stylesheets/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body id="home_body">
+  
 <div class="main-box">
-  <nav class="home_nav">
-    
-    <div class="h2">
-    <p>Pastry Paradise</p>
-  </div>
-
-  <div id="icons">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <i class="fa-solid fa-heart"></i>
-    <i class="fa-solid fa-cart-shopping"></i>
-    
-  </div>
-
-    <div class="services">
-      <ul id="service">
-        <li id="nav"><a href="./index.html">Home</a></li>
-        <li id="nav" class="shop"><a href="./services/Shop.html">Shop</a></li>
-        <li id="nav"><a href="./services/Categories.html">Categories</a></li>
-        <li id="nav"><a href="./services/About.html">About</a></li>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div id="icons">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <i class="fa-solid fa-heart"></i>
+      <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+    <div class="container">
+      <a  href="#" class="navbar-brand ">Pastry Paradise</a>
+  
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-label="Expand Navigation">
+        <div class="navbar-toggler-icon"></div>
+      </button>
+    <div class="collapse navbar-collapse" id="nav" style="justify-content: flex-end;">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./services/Shop.html">Store</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./services/Categories.html">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./services/About.html">About</a>
+        </li>
       </ul>
     </div>
-  </nav>
+    </div>
+    </nav>
+  <div class="sub-box">
+    <div class="sub-box-child1">
 
-    
-<div class="sub-box">
-
-  <div class="sub-box-child1">
       <div class="grand-child1">
         <div class="productDetail">
-
           <h2 id="h1">Popular</h2>
           <p id="popularName">Chocolate Fudge Cake</p>
           <p id="popularDescription">"A party without cake is just a meeting." - Julia Child.</p>
           <button id="order">OrderNow</button>
-
         </div>
-      <div class="childImg">
-            <img src="./img/cake3.jpg">
-      </div>    
+          <div class="childImg">
+          <img src="./img/cake3.jpg">
+        </div>    
       </div>
 
       <div class="grand-child2">
         <div class="productDetail">
-
           <h2 id="h1">Popular</h2>
           <p id="popularName">Nutty Chocolate Cookies</p>
           <p id="popularDescription">Everything I dough, I dough it for you!!</p>
           <button id="order">OrderNow</button>
-
         </div>
-      <div class="childImg">
+        <div class="childImg">
           <img src="./img/cookie1.jpg">
-      </div>  
+        </div>  
       </div>
 
       <div class="grand-child3">
         <div class="productDetail">
-
           <h2 id="h1">Popular</h2>
           <p id="popularName">  Chocolate Chip Muffins</p>
           <p id="popularDescription">Happiness translates to freshly baked muffins.</p>
           <button id="order">OrderNow</button>
-
-
-        </div><!--end of productDetail-->
-      <div class="childImg">
-           <img src="./img/muffin2.jpg">
-      </div>   
-      </div><!--end of grandChild3-->
+        </div>
+          <div class="childImg">
+          <img src="./img/muffin2.jpg">
+        </div>   
+      </div>
 
     </div><!--end of sub-box-child1-->
    
@@ -89,8 +90,8 @@
 </div>  <!--end of main-box-->
   
 
-
-<script src="./script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!-- <script src="./script.js"></script> -->
 </body>
 </html>
 
